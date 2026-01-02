@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KingSteal SMP | Official Site</title>
+    <style>
+        /* CONFIG & CORE STYLES */
+        :root {
+            --primary: #ff4d00; 
+            --steel: #b0b0b0;
+            --dark: #0a0a0a;
+            --accent: #1e1e1e;
+            --gold: #ffd700;
+            --silver: #e0e0e0;
+            --bronze: #cd7f32;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Arial Black', Gadget, sans-serif;
+            background-color: var(--dark);
+            color: white;
+            margin: 0;
+            text-transform: uppercase;
+            overflow-x: hidden;
+        }
+
+        /* HERO HEADER */
+        header {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1500');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 10px solid var(--primary);
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 { 
+            font-size: clamp(3.5rem, 12vw, 7rem); 
+            margin: 0; 
+            color: var(--primary); 
+            letter-spacing: -2px;
+            text-shadow: 4px 4px 0px #000;
+        }
+
+        .ip-card {
+            background: #fff;
+            color: #000;
+            padding: 25px 50px;
+            margin-top: 30px;
+            border-right: 12px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .ip-text { font-size: 1.4rem; font-weight: 900; }
+        .port-text { font-size: 1rem; color: #666; display: block; }
+
+        /* SCROLLING WARNING */
+        .marquee {
+            background: var(--primary);
+            color: black;
+            padding: 10px 0;
+            font-weight: 900;
+            white-space: nowrap;
+            overflow: hidden;
+            border-bottom: 2px solid #000;
+        }
+
+        /* GRID SYSTEM */
+        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--accent);
+            padding: 40px;
+            position: relative;
+            transition: 0.3s;
+            border: 1px solid #333;
+        }
+
+        .card:hover { border-color: var(--primary); background: #151515; }
+        .card h2 { color: var(--primary); margin-top: 0; }
+        .card p { text-transform: none; color: #aaa; font-family: 'Segoe UI', sans-serif; line-height: 1.5; }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .btn:hover { background: white; color: black; transform: skewX(-5deg); }
+
+        /* LEADERBOARD */
+        #leaderboard { margin-top: 100px; }
+        .section-title { text-align: center; font-size: 3rem; margin-bottom: 50px; color: var(--steel); }
+
+        .team-row {
+            display: grid;
+            grid-template-columns: 80px 1fr 150px;
+            align-items: center;
+            padding: 30px;
+            margin-bottom: 15px;
+            background: #111;
+            border-left: 5px solid #444;
+            transition: 0.4s;
+        }
+
+        .team-row:hover { background: #1a1a1a; transform: translateX(10px); }
+
+        .rank-num { font-size: 2.5rem; color: #333; font-italic: italic; }
+        
+        .team-info .name { font-size: 1.8rem; display: block; letter-spacing: 2px; }
+        .team-info .leader { 
+            font-size: 0.9rem; 
+            color: var(--primary); 
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 5px;
+            display: block;
+        }
+        .leader span { color: #fff; background: #333; padding: 2px 8px; border-radius: 3px; }
+
+        .status-tag { text-align: right; font-size: 0.8rem; letter-spacing: 1px; color: var(--steel); }
+
+        /* RANK VARIANTS */
+        .rank-1 { border-left-color: var(--gold); background: linear-gradient(90deg, #1a1800, #111); }
+        .rank-1 .rank-num { color: var(--gold); }
+        .rank-1 .leader span { border: 1px solid var(--gold); }
+
+        .rank-2 { border-left-color: var(--silver); background: linear-gradient(90deg, #151515, #111); }
+        .rank-2 .rank-num { color: var(--silver); }
+
+        .rank-3 { border-left-color: var(--bronze); }
+        .rank-3 .rank-num { color: var(--bronze); }
+
+        footer { text-align: center; padding: 100px 20px; background: #050505; color: #444; }
+    </style>
+</head>
+<body>
+
+    <div class="marquee">
+        NO LAND CLAIMS • STEALING IS ALLOWED • TEAMS MANDATORY • NO LAND CLAIMS • STEALING IS ALLOWED • TEAMS MANDATORY
+    </div>
+
+    <header>
+        <h1>KINGSTEAL</h1>
+        <p style="letter-spacing: 10px; color: var(--steel);">The Iron Throne Awaits</p>
+        <div class="ip-card">
+            <span class="ip-text">KINGSTEAL.aternos.me</span>
+            <span class="port-text">PORT: 61532</span>
+        </div>
+        <a href="#leaderboard" class="btn">VIEW POWER RANKINGS</a>
+    </header>
+
+    <div class="container">
+        <div class="feature-grid">
+            <div class="card">
+                <h2>THE LAW</h2>
+                <p>There is no protection here. If you build it, you must defend it. Use redstone, traps, and obsidian to keep your loot safe from the teams listed below.</p>
+            </div>
+            <div class="card" style="border-top: 5px solid var(--primary);">
+                <h2>FACTIONS</h2>
+                <p>Teams are the heartbeat of KingSteal. Join an existing empire or create your own to challenge the current leaders for the top spot.</p>
+            </div>
+            <div class="card">
+                <h2>HARDWARE</h2>
+                <p>Optimized for low lag survival. Active admins. Hosted on Aternos. Season 1 is currently LIVE. Connect now and start your legacy.</p>
+            </div>
+        </div>
+
+        <section id="leaderboard">
+            <h2 class="section-title">TOP FACTIONS</h2>
+            
+            <div class="team-container">
+                
+                <div class="team-row rank-1">
+                    <div class="rank-num">01</div>
+                    <div class="team-info">
+                        <span class="name">MANGO GANG</span>
+                        <span class="leader">COMMANDER: <span>UPLAKSHWARRIO</span></span>
+                    </div>
+                    <div class="status-tag">DOMINATING</div>
+                </div>
+
+                <div class="team-row rank-2">
+                    <div class="rank-num">02</div>
+                    <div class="team-info">
+                        <span class="name">SPIDERS</span>
+                        <span class="leader">COMMANDER: <span>NOTHUSKXD</span></span>
+                    </div>
+                    <div class="status-tag">AGGRESSIVE</div>
+                </div>
+
+                <div class="team-row rank-3">
+                    <div class="rank-num">03</div>
+                    <div class="team-info">
+                        <span class="name">IMMORTALS</span>
+                        <span class="leader">COMMANDER: <span>ALANGAMER</span></span>
+                    </div>
+                    <div class="status-tag">ELITE</div>
+                </div>
+
+                <div class="team-row rank-4">
+                    <div class="rank-num">04</div>
+                    <div class="team-info">
+                        <span class="name">VORTEX</span>
+                        <span class="leader">COMMANDER: <span>SHADDOW</span></span>
+                    </div>
+                    <div class="status-tag">SCOUTS</div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 KINGSTEAL SMP | NO CLAIMS SURVIVAL</p>
+        <p style="font-size: 0.7rem;">KINGSTEAL.ATERNOS.ME:61532</p>
+        <br>
+        <a href="#" style="color: var(--primary); text-decoration: none;">↑ BACK TO TOP</a>
+    </footer>
+
+</body>
+</html>
