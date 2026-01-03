@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KingSteal SMP | Official Site</title>
+    <style>
+        :root {
+            --primary: #ff4d00; 
+            --steel: #b0b0b0;
+            --dark: #0a0a0a;
+            --accent: #1e1e1e;
+            --gold: #ffd700;
+            --silver: #e0e0e0;
+            --bronze: #cd7f32;
+            --discord: #5865F2;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Arial Black', Gadget, sans-serif;
+            background-color: var(--dark);
+            color: white;
+            margin: 0;
+            text-transform: uppercase;
+            overflow-x: hidden;
+        }
+
+        /* MARQUEE WARNING */
+        .marquee {
+            background: var(--primary);
+            color: black;
+            padding: 10px 0;
+            font-weight: 900;
+            white-space: nowrap;
+            overflow: hidden;
+            border-bottom: 2px solid #000;
+        }
+
+        /* HERO HEADER */
+        header {
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1500');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 10px solid var(--primary);
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 { 
+            font-size: clamp(3.5rem, 12vw, 7rem); 
+            margin: 0; 
+            color: var(--primary); 
+            text-shadow: 4px 4px 0px #000;
+        }
+
+        .ip-card {
+            background: #fff;
+            color: #000;
+            padding: 20px 40px;
+            margin-top: 30px;
+            border-right: 12px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .ip-text { font-size: 1.4rem; font-weight: 900; display: block; }
+        .port-text { font-size: 1rem; color: #666; }
+
+        .btn-group { display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap; justify-content: center; }
+
+        .btn {
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-discord { background: var(--discord); color: white; }
+        .btn:hover { transform: translateY(-3px); filter: brightness(1.2); }
+
+        /* CONTENT SECTION */
+        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--accent);
+            padding: 40px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .card h2 { color: var(--primary); margin-top: 0; }
+        .card p { text-transform: none; color: #aaa; font-family: 'Segoe UI', sans-serif; }
+
+        /* LEADERBOARD */
+        #leaderboard { margin-top: 80px; }
+        .section-title { text-align: center; font-size: 3rem; margin-bottom: 40px; }
+
+        .team-row {
+            display: grid;
+            grid-template-columns: 80px 1fr 150px;
+            align-items: center;
+            padding: 25px;
+            margin-bottom: 15px;
+            background: #111;
+            border-left: 5px solid #444;
+            transition: 0.3s;
+        }
+
+        .team-row:hover { transform: translateX(10px); background: #181818; }
+        .rank-num { font-size: 2rem; font-weight: 900; }
+        .name { font-size: 1.5rem; display: block; }
+        .leader { font-size: 0.8rem; color: var(--primary); font-family: monospace; }
+        .leader span { color: #fff; background: #333; padding: 2px 6px; }
+
+        /* RANK COLORS */
+        .rank-1 { border-left-color: var(--gold); background: linear-gradient(90deg, #1a1800, #111); }
+        .rank-2 { border-left-color: var(--silver); }
+        .rank-3 { border-left-color: var(--bronze); }
+
+        /* DISCORD SECTION */
+        .discord-box {
+            background: var(--discord);
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 100px;
+            clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+        }
+
+        footer { text-align: center; padding: 60px 20px; background: #000; color: #444; }
+    </style>
+</head>
+<body>
+
+    <div class="marquee">
+        NO LAND CLAIMS • 24/7 UPTIME • TEAMS MANDATORY • STEALING ALLOWED • NO LAND CLAIMS • 24/7 UPTIME
+    </div>
+
+    <header>
+        <h1>KINGSTEAL</h1>
+        <p style="letter-spacing: 8px; color: var(--steel);">Industrial Survival SMP</p>
+        
+        <div class="ip-card">
+            <span class="ip-text">KINGSTEAL.aternos.me</span>
+            <span class="port-text">PORT: 61532</span>
+        </div>
+
+        <div class="btn-group">
+            <a href="#leaderboard" class="btn btn-primary">VIEW RANKS</a>
+            <a href="https://discord.gg/4AXXCJRT" target="_blank" class="btn btn-discord">JOIN DISCORD</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card-grid">
+            <div class="card">
+                <h2>THE RULES</h2>
+                <p>No claims. No mercy. Protect your base with traps and obsidian. Trust no one but your team.</p>
+            </div>
+            <div class="card">
+                <h2>THE WORLD</h2>
+                <p>24/7 Uptime. Low lag. Pure survival. Join the most competitive community on Aternos.</p>
+            </div>
+        </div>
+
+        <section id="leaderboard">
+            <h2 class="section-title">TOP FACTIONS</h2>
+            
+            <div class="team-row rank-1">
+                <div class="rank-num">01</div>
+                <div class="team-info">
+                    <span class="name">MANGO GANG</span>
+                    <span class="leader">LEADER: <span>UPLAKSHWARRIO</span></span>
+                </div>
+                <div style="text-align:right">DOMINATING</div>
+            </div>
+
+            <div class="team-row rank-2">
+                <div class="rank-num">02</div>
+                <div class="team-info">
+                    <span class="name">SPIDERS</span>
+                    <span class="leader">LEADER: <span>NOTHUSKXD</span></span>
+                </div>
+                <div style="text-align:right">RISING</div>
+            </div>
+
+            <div class="team-row rank-3">
+                <div class="rank-num">03</div>
+                <div class="team-info">
+                    <span class="name">IMMORTALS</span>
+                    <span class="leader">LEADER: <span>ALANGAMER</span></span>
+                </div>
+                <div style="text-align:right">ELITE</div>
+            </div>
+
+            <div class="team-row">
+                <div class="rank-num">04</div>
+                <div class="team-info">
+                    <span class="name">VORTEX</span>
+                    <span class="leader">LEADER: <span>SHADDOW</span></span>
+                </div>
+                <div style="text-align:right">ACTIVE</div>
+            </div>
+        </section>
+    </div>
+
+    <div class="discord-box">
+        <h2 style="font-size: 2.5rem; margin-bottom: 10px;">COMMUNITY DISCORD</h2>
+        <p style="text-transform: none; margin-bottom: 30px;">Chat with leaders, report hackers, and find new teammates.</p>
+        <a href="https://discord.gg/4AXXCJRT" target="_blank" class="btn" style="background: white; color: var(--discord); font-size: 1.2rem; padding: 20px 50px;">ENTER DISCORD</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 KINGSTEAL SMP | IP: KINGSTEAL.ATERNOS.ME</p>
+        <a href="#" style="color: var(--primary); text-decoration: none; font-size: 0.8rem;">BACK TO TOP</a>
+    </footer>
+
+</body>
+</html>
